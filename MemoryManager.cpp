@@ -34,19 +34,31 @@ int MemoryManager::findBestFitSlot(int processSize) {
 
 void MemoryManager::allocateMemory() {
     for (auto& process : processes) {
+        std::cout << "Taking up Process " << process.id << '\n';
         int index = findBestFitSlot(process.size);
         if (index != -1) {
             Slot& slot = slots[index];
-            std::cout << "Allocating Process " << process.id << " of size " << process.size
-                      << " to slot at base " << slot.base << '\n';
+            std::cout << "Slot assignment successful. " << process.id << " - Base location " << slot.base << ".\n";
             slot.base += process.size;
             slot.displacement -= process.size;
             if (slot.displacement == 0) {
                 slots.erase(slots.begin() + index);
             }
+            printCurrentSlotMap();
         } else {
             std::cout << "Cannot allocate Process " << process.id << " of size " << process.size << '\n';
             break;
         }
     }
+    if (processes.back().size <= slots.back().displacement) {
+        std::cout << "All processes in the list were successfully allocated memory slots.\n";
+    }
+}
+
+void MemoryManager::printCurrentSlotMap() {
+    std::cout << "Current slot map:\n";
+    for (const auto& slot : slots) {
+        std::cout << slot.base << ' ' << slot.displacement << ' ';
+    }
+    std::cout << "\n\n";
 }
