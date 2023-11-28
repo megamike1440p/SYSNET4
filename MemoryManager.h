@@ -15,6 +15,7 @@ public:
     void readSlotsFromFile(const std::string& filename);
     void readProcessesFromFile(const std::string& filename);
     void allocateMemory();
+    void printCurrentSlotMap();
 private:
     int findBestFitSlot(int processSize);
 };
