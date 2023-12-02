@@ -1,3 +1,5 @@
+//Benjamin Salvesen and Michael Whitten
+//MemoryManager.cpp
 #include "MemoryManager.h"
 #include <iostream>
 #include <fstream>
