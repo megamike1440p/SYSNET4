@@ -1,3 +1,5 @@
+//Benjamin Salvesen and Michael Whitten
+//Main.cpp
 #include "MemoryManager.h"
 
 int main() {
