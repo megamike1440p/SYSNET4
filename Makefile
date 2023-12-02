@@ -1,13 +1,18 @@
 CXX=g++
 CXXFLAGS=-g -Wall
 
-all: memory_manager
+all: main run
 
-memory_manager: Main.o Slot.o Process.o MemoryManager.o
-	$(CXX) $(CXXFLAGS) Main.o Slot.o Process.o MemoryManager.o -o memory_manager
+main: Main.o Slot.o Process.o MemoryManager.o
+	$(CXX) $(CXXFLAGS) Main.o Slot.o Process.o MemoryManager.o -o main
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+.PHONY: run
+run:
+	./main
+
+# Target to clean the build
 clean:
-	rm -f *.o memory_manager
+	rm -f *.o main
