@@ -1,3 +1,5 @@
+//Benjamin Salvesen and Michael Whitten
+//MemoryManager.h
 #ifndef MEMORY_MANAGER_H
 #define MEMORY_MANAGER_H
 
