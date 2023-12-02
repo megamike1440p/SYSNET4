@@ -1,3 +1,5 @@
+//Benjamin Salvesen and Michael Whitten
+//Slot.h
 #ifndef SLOT_H
 #define SLOT_H
 
