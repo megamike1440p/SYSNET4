@@ -2,8 +2,8 @@
 
 int main() {
     MemoryManager manager;
-    manager.readSlotsFromFile("InputFileBaseDisp.txt");
-    manager.readProcessesFromFile("InputFileProc.txt");
+    manager.readSlotsFromFile("23F_COP4634_Project4_InputFileBaseDisp.txt");
+    manager.readProcessesFromFile("23F_COP4634_Project4_InputFileProc.txt");
     manager.allocateMemory();
     return 0;
 }
