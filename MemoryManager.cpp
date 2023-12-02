@@ -58,7 +58,7 @@ void MemoryManager::allocateMemory() {
 void MemoryManager::printCurrentSlotMap() {
     std::cout << "Current slot map:\n";
     for (const auto& slot : slots) {
-        std::cout << slot.base << ' ' << slot.displacement << ' ';
+        std::cout << slot.base << "\t\t" << slot.displacement << "\n";
     }
-    std::cout << "\n\n";
+    std::cout << "\n";
 }
